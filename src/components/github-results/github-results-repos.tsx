@@ -6,7 +6,7 @@ import {useAppSelector} from "../../app/hooks";
 import {selectRepoStatus} from "../../features/github-search/githubSearchSlice";
 
 interface Props {
-    repos: Array<GithubRepo>
+    repos: GithubRepo[]
 }
 
 const GithubResultsRepos: FC<Props> = ({ repos }) => {

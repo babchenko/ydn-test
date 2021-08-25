@@ -12,5 +12,5 @@ export interface GithubRepo {
 }
 
 export type GithubRepoResponse = {
-    [key: string]: Array<GithubRepo>
+    [key: string]: GithubRepo[]
 }

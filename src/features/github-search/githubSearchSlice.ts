@@ -4,7 +4,7 @@ import { fetchUsers, fetchRepos } from './githubSearchAPI';
 import { GithubUser, GithubRepoResponse } from "./GithubInterface";
 
 export interface GithubState {
-    users: Array<GithubUser>;
+    users: GithubUser[];
     repos: GithubRepoResponse,
     total: 0;
     userStatus: 'idle' | 'loading' | 'failed';

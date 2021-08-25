@@ -9,23 +9,23 @@ const ENTER_KEY_CODE = 13;
 export function GithubSearch() {
     const [username, setUsername] = useState('');
     const dispatch = useAppDispatch();
-    const { users, total } = useAppSelector(selectUsers);
+    const { users } = useAppSelector(selectUsers);
 
-     const searchUserByEnter = (e: React.KeyboardEvent<object>): void  => {
+    const searchUserByEnter = (e: React.KeyboardEvent<object>): void  => {
          const keyCode = e.keyCode;
          if (keyCode === ENTER_KEY_CODE && username.length) {
              dispatch(fetchUsersAction(username));
          }
      }
 
-     const searchOnSubmit = (e: React.FormEvent<object>): void => {
+    const searchOnSubmit = (e: React.FormEvent<object>): void => {
          e.preventDefault();
          if (username.length) {
              dispatch(fetchUsersAction(username));
          }
      }
 
-     return (
+    return (
          <Container className="main">
              <Row>
                  <Col>

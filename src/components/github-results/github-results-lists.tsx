@@ -6,7 +6,7 @@ import {useAppSelector} from "../../app/hooks";
 import {selectUserStatus} from "../../features/github-search/githubSearchSlice";
 
 interface Props {
-    users: Array<GithubUser>;
+    users: GithubUser[];
 }
 
 const GithubResultsList: FC<Props> = ({ users }) => {
@@ -33,7 +33,7 @@ const GithubResultsList: FC<Props> = ({ users }) => {
 
     return (
         <div className="mg--top-20">
-            <Accordion flush>
+            <Accordion flush={true}>
                 { users.map((user) => <GithubResultsItem user={user} key={user.login} />) }
             </Accordion>
         </div>
