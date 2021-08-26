@@ -1,9 +1,9 @@
 import React, {FC} from 'react'
 import {Accordion, Figure, Spinner} from 'react-bootstrap'
-import GithubResultsItem from "./github-results-item";
-import {GithubUser} from "../../features/github-search/GithubInterface";
-import {useAppSelector} from "../../app/hooks";
-import {selectUserStatus} from "../../features/github-search/githubSearchSlice";
+import GithubResultsItem from './github-results-item';
+import {GithubUser} from '../../features/github-search/GithubInterface';
+import {useAppSelector} from '../../app/hooks';
+import {selectUserStatus} from '../../features/github-search/githubSearchSlice';
 
 interface Props {
     users: GithubUser[];
@@ -15,8 +15,8 @@ const GithubResultsList: FC<Props> = ({ users }) => {
 
     if (loading === 'loading') {
        return (
-           <div className="spinner">
-                <Spinner animation="border"/>
+           <div className='spinner'>
+                <Spinner animation='border'/>
            </div>
        )
     }
@@ -32,7 +32,7 @@ const GithubResultsList: FC<Props> = ({ users }) => {
     }
 
     return (
-        <div className="mg--top-20">
+        <div className='mg--top-20'>
             <Accordion flush={true}>
                 { users.map((user) => <GithubResultsItem user={user} key={user.login} />) }
             </Accordion>

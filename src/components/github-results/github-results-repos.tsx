@@ -1,9 +1,9 @@
-import React, {FC} from "react";
+import React, {FC} from 'react';
 import {ListGroup, Figure, Spinner, Row, Col} from 'react-bootstrap'
 import { Star } from 'react-github-buttons';
-import {GithubRepo} from "../../features/github-search/GithubInterface";
-import {useAppSelector} from "../../app/hooks";
-import {selectRepoStatus} from "../../features/github-search/githubSearchSlice";
+import {GithubRepo} from '../../features/github-search/GithubInterface';
+import {useAppSelector} from '../../app/hooks';
+import {selectRepoStatus} from '../../features/github-search/githubSearchSlice';
 
 interface Props {
     repos: GithubRepo[]
@@ -15,8 +15,8 @@ const GithubResultsRepos: FC<Props> = ({ repos }) => {
 
     if (loading === 'loading') {
         return (
-            <div className="spinner">
-                <Spinner animation="border" />
+            <div className='spinner'>
+                <Spinner animation='border' />
             </div>
         )
     }

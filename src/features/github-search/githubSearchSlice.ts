@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { fetchUsers, fetchRepos } from './githubSearchAPI';
-import { GithubUser, GithubRepoResponse } from "./GithubInterface";
+import { GithubUser, GithubRepoResponse } from './GithubInterface';
 
 export interface GithubState {
     users: GithubUser[];

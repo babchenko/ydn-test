@@ -1,9 +1,9 @@
 import {FC} from 'react';
 import GithubResultRepos from './github-results-repos';
-import {Accordion} from "react-bootstrap";
-import {GithubUser} from "../../features/github-search/GithubInterface";
-import {useAppSelector, useAppDispatch} from "../../app/hooks";
-import {selectRepos, fetchReposAction} from "../../features/github-search/githubSearchSlice";
+import {Accordion} from 'react-bootstrap';
+import {GithubUser} from '../../features/github-search/GithubInterface';
+import {useAppSelector, useAppDispatch} from '../../app/hooks';
+import {selectRepos, fetchReposAction} from '../../features/github-search/githubSearchSlice';
 
 interface Props {
     user: GithubUser

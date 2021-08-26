@@ -8,7 +8,7 @@ export interface GithubRepo {
     name: string;
     description: null | string;
     stargazers_count: number;
-    owner: GithubUser;
+    owner: GithubUser;git
 }
 
 export type GithubRepoResponse = {

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { fetchUsersAction, selectUsers } from './githubSearchSlice'
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import GithubResultsList from "../../components/github-results/github-results-lists";
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import GithubResultsList from '../../components/github-results/github-results-lists';
 
 const ENTER_KEY_CODE = 13;
 
@@ -26,22 +26,22 @@ export function GithubSearch() {
      }
 
     return (
-         <Container className="main">
+         <Container className='main'>
              <Row>
                  <Col>
                      <Form onSubmit={searchOnSubmit}>
-                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                             <Form.Control onChange={(e) => setUsername((e.target.value))} value={username} type="text" placeholder="Enter username" onKeyUp={searchUserByEnter} />
+                         <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
+                             <Form.Control onChange={(e) => setUsername((e.target.value))} value={username} type='text' placeholder='Enter username' onKeyUp={searchUserByEnter} />
                          </Form.Group>
-                         <div className="d-grid gap-2">
-                             <Button size="lg" type="submit" variant="primary">Search</Button>
+                         <div className='d-grid gap-2'>
+                             <Button size='lg' type='submit' variant='primary'>Search</Button>
                          </div>
                      </Form>
                  </Col>
              </Row>
              <Row>
                 <Col>
-                    { users.length ? <div className="mg--top-20">Showing users for "{ username }"</div> : null}
+                    { users.length ? <div className='mg--top-20'>Showing users for "{ username }"</div> : null}
                     <GithubResultsList users={users} />
                 </Col>
              </Row>
