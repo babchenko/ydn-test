@@ -1,12 +1,12 @@
 import React from 'react';
-import { GithubSearch } from './features/github-search/GithubSearch'
+import {GithubSearch} from './features/github-search/GithubSearch'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
- return (
-     <GithubSearch />
- )
+    return (
+        <GithubSearch/>
+    )
 }
 
 export default App;

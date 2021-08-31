@@ -1,22 +1,22 @@
 import React, {FC} from 'react';
+import {Star} from 'react-github-buttons';
 import {ListGroup, Figure, Spinner, Row, Col} from 'react-bootstrap'
-import { Star } from 'react-github-buttons';
-import {GithubRepo} from '../../features/github-search/GithubInterface';
-import {useAppSelector} from '../../app/hooks';
-import {selectRepoStatus} from '../../features/github-search/githubSearchSlice';
+import {GithubRepo} from 'features/github-search/GithubInterface';
+import {useAppSelector} from 'app/hooks';
+import {selectRepoStatus} from 'features/github-search/githubRepoSlice';
 
 interface Props {
     repos: GithubRepo[]
 }
 
-const GithubResultsRepos: FC<Props> = ({ repos }) => {
+const GithubResultsRepos: FC<Props> = ({repos}) => {
 
     const loading = useAppSelector(selectRepoStatus);
 
     if (loading === 'loading') {
         return (
             <div className='spinner'>
-                <Spinner animation='border' />
+                <Spinner animation='border'/>
             </div>
         )
     }
@@ -24,16 +24,16 @@ const GithubResultsRepos: FC<Props> = ({ repos }) => {
     if (repos && repos.length) {
         return (
             <ListGroup>
-                { repos.map((repo) => {
+                {repos.map((repo: GithubRepo) => {
                     return (
                         <ListGroup.Item key={repo.id}>
                             <Row>
                                 <Col xs={12} md={10}>
-                                    { repo.name }
+                                    {repo.name}
                                 </Col>
                                 <Col xs={12} md={2}>
-                                    <div style={{ float: 'right' }}>
-                                        <Star owner={repo.owner.login} repo={repo.name}  />
+                                    <div style={{float: 'right'}}>
+                                        <Star owner={repo.owner.login} repo={repo.name}/>
                                     </div>
                                 </Col>
                             </Row>
@@ -41,14 +41,14 @@ const GithubResultsRepos: FC<Props> = ({ repos }) => {
                                 <Col>
                                     <Figure>
                                         <Figure.Caption>
-                                            { repo.description }
+                                            {repo.description}
                                         </Figure.Caption>
                                     </Figure>
                                 </Col>
                             </Row>
                         </ListGroup.Item>
                     )
-                }) }
+                })}
             </ListGroup>
         )
     } else {

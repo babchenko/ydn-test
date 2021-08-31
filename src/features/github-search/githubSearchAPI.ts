@@ -1,9 +1,11 @@
-import { github } from '../../app/axios'
+import {github} from 'app/axios'
 
-const fetchUsers = (username: string)  => {
+const fetchUsers = (username: string) => {
     return github.get('/search/users', {
         params: {
-            q: username
+            q: username,
+            per_page: 5,
+            page: 1
         },
     });
 }

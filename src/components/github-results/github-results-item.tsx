@@ -1,15 +1,15 @@
 import {FC} from 'react';
-import GithubResultRepos from './github-results-repos';
 import {Accordion} from 'react-bootstrap';
-import {GithubUser} from '../../features/github-search/GithubInterface';
-import {useAppSelector, useAppDispatch} from '../../app/hooks';
-import {selectRepos, fetchReposAction} from '../../features/github-search/githubSearchSlice';
+import GithubResultRepos from 'components/github-results/github-results-repos';
+import {GithubUser} from 'features/github-search/GithubInterface';
+import {useAppSelector, useAppDispatch} from 'app/hooks';
+import {selectRepos, fetchReposAction} from 'features/github-search/githubRepoSlice';
 
 interface Props {
     user: GithubUser
 }
 
-const GithubResultsItem: FC<Props> = ({ user }) => {
+const GithubResultsItem: FC<Props> = ({user}) => {
     const repos = useAppSelector(selectRepos);
     const dispatch = useAppDispatch();
 
@@ -22,9 +22,9 @@ const GithubResultsItem: FC<Props> = ({ user }) => {
 
     return (
         <Accordion.Item eventKey={user.login}>
-            <Accordion.Header onClick={loadUserRepos}>{ user.login }</Accordion.Header>
+            <Accordion.Header onClick={loadUserRepos}>{user.login}</Accordion.Header>
             <Accordion.Body>
-                <GithubResultRepos repos={repos[user.login]} />
+                <GithubResultRepos repos={repos[user.login]}/>
             </Accordion.Body>
         </Accordion.Item>
     )
